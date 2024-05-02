@@ -20,7 +20,7 @@ export default async function HomePage() {
   return (
 <div>
   
-<div className="flex flex-wrap gap-4 justify-center w-full">
+<div className="flex flex-wrap gap-4 justify-center w-[80vw] mx-auto">
    {/* {posts.map((post)=>(
     <div key={post.id}>
       <div>{post.name}</div>
@@ -29,9 +29,8 @@ export default async function HomePage() {
 
 
     {[...posts,...posts,,...posts].map((post,index)=>(
-      <div key={post.id+"-"+index} className="w-1/5 h-1/5 ">
-        <img src={post.url} alt={post.name} />
-
+      <div key={post.id+"-"+index} className="flex  flex-col items-center justify-center ">
+        <Image src={post.url} alt={post.name} width={200} height={200} loading="lazy" />
         <div className="text-center ">
           {post.name}
         </div>
