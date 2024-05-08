@@ -14,3 +14,13 @@ if(!user.userId) throw new Error("Not signed in");
     );
     return images;
 }
+export async function getImages(id:number){
+    const images=await db.query.image.findFirst(
+        {
+            where:(model,{eq})=>eq(model.id,id),    
+        }
+
+    )
+    if (!images) throw new Error("Not found");
+    return images;  
+}

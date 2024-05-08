@@ -7,6 +7,7 @@ import "@uploadthing/react/styles.css";
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { extractRouterConfig } from "uploadthing/server";
 import { ourFileRouter } from "./api/uploadthing/core";
+import React from "react";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
@@ -18,11 +19,10 @@ export const metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout(
+  props: { children:React.ReactNode;modal:React.ReactNode ;}
+
+) {
   return (
     <html lang="en">
       <body className={`font-sans ${inter.variable} flex flex-col gap-4`}>
@@ -37,7 +37,10 @@ export default function RootLayout({
         />
 <ClerkProvider>
      <TopNav/>
-        {children}
+
+        {props.children}
+        {props.modal}
+        <div id="modal-root"></div>
 </ClerkProvider>
         </body>
 
