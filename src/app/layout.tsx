@@ -40,7 +40,7 @@ export default function RootLayout(
 
         {props.children}
         {props.modal}
-        <div id="modal-root"></div>
+        <div id="modal-root"/>
 </ClerkProvider>
         </body>
 
