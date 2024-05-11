@@ -1,6 +1,6 @@
 
 import { getImages } from "~/server/queries";
-import ClientPortal from "~/components/ClientPortal";
+import ClientPortal from "../components/ClientPortal";
 import Image from "next/image";
 export default async  function Home({id}:{id:number}) {
 
@@ -13,9 +13,9 @@ return (
       <ClientPortal
         selector="modal-root"
       >
-<div className="flex flex-col items-center justify-center h-screen w-screen mx-auto ">
+<div className="flex flex-col items-center justify-center  mx-auto">
     <Image src={images.url} className='rounded-lg ' alt="photo"  width={400} height={300} />
-</div>
+</div>        
       </ClientPortal>
     </>
   );

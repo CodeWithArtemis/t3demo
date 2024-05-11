@@ -1,5 +1,6 @@
 import { getImages } from '~/server/queries';
-import { Modal } from './modal';
+import  Modal from '~/components/modal';
+import Home from '~/components/modal';
 import Image from 'next/image';
 import { db } from '~/server/db';
 export default async function PhotoModal({ 
@@ -9,7 +10,5 @@ export default async function PhotoModal({
 }) {
   const post= await getImages(Number(photoId));
   console.log({post})
-  return <Modal>
-    <Image src={post.url} className='rounded-lg' alt="photo"  width={400} height={300} />
-  </Modal>;
+  return <Home id={Number(photoId)}></Home>
 }

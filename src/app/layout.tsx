@@ -24,7 +24,9 @@ export default function RootLayout(
 
 ) {
   return (
-    <html lang="en">
+<ClerkProvider>
+ 
+ <html lang="en">
       <body className={`font-sans ${inter.variable} flex flex-col gap-4`}>
   <NextSSRPlugin
           /**
@@ -35,15 +37,17 @@ export default function RootLayout(
            */
           routerConfig={extractRouterConfig(ourFileRouter)}
         />
-<ClerkProvider>
      <TopNav/>
 
         {props.children}
         {props.modal}
-        <div id="modal-root"/>
-</ClerkProvider>
+        <div id="modal-root"></div>
+
+
+
         </body>
 
         </html>
+</ClerkProvider>
   );
 }
